@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Arduino Nano - Detalle del Producto</title>
+  <link rel="stylesheet" href="producto.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="top-bar">
+      <div class="logo">
+        <img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" alt="Logo" />
+      </div>
+      <button class="back-btn" onclick="window.location.href='principal.html'">
+        <span class="material-icons">arrow_back</span> Volver
+      </button>
+      <div class="cart" id="cart-btn">
+        <span class="material-icons">shopping_cart</span>
+        <span id="cart-count">0</span>
+      </div>
+    </div>
+
+    <main class="product-detail">
+      <img id="product-image" src="Imagen/Arduino nano.jpg" alt="index Nano" />
+      <h1 id="product-name">Arduino Nano</h1>
+      <p id="product-description">
+        Arduino Nano es una placa de desarrollo pequeña basada en el microcontrolador ATmega328P. Cuenta con 14 pines digitales (6 con PWM), 8 entradas analógicas, y funciona a 5V. Es una opción compacta ideal para proyectos con espacio reducido.
+      </p>
+      <ul class="product-features">
+        <li>Microcontrolador: ATmega328P</li>
+        <li>Voltaje operativo: 5V</li>
+        <li>Pines digitales: 14 (6 con salida PWM)</li>
+        <li>Pines analógicos: 8</li>
+        <li>Memoria Flash: 32 KB (0.5 KB usada por bootloader)</li>
+        <li>SRAM: 2 KB</li>
+        <li>EEPROM: 1 KB</li>
+        <li>Velocidad de reloj: 16 MHz</li>
+        <li>Dimensiones aproximadas: 45 x 18 mm</li>
+      </ul>
+      <div class="price-add">
+        <span id="product-price">Q300</span>
+        <button id="add-to-cart-btn" class="add-cart-btn">Agregar al carrito</button>
+      </div>
+    </main>
+
+    <footer>
+      <div class="contact">
+        <span>Contactanos:</span>
+        <span class="footer-icon"><i class="fa-regular fa-envelope"></i></span>
+        <span class="email">armeya.oficial@gmail.com</span>
+        <span class="footer-icon"><i class="fa-brands fa-instagram"></i></span>
+        <span class="instagram">@armeya.oficial</span>
+      </div>
+    </footer>
+
+    <!-- Carrito Modal -->
+    <div id="cart-modal" class="cart-modal">
+      <div class="cart-modal-content">
+        <span class="close" id="close-cart">&times;</span>
+        <h3>Carrito de Compras</h3>
+        <div id="cart-items"></div>
+        <div id="cart-total"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="cart.js"></script>
+  <script>
+    const addBtn = document.getElementById('add-to-cart-btn');
+addBtn.addEventListener('click', () => {
+  const product = {
+    name: "Arduino Nano",      
+    price: 300                
+  };
+  window.dispatchEvent(new CustomEvent('add-product', { detail: product }));
+});
+  </script>
+</body>
+</html>

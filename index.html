@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tienda Online - Bienvenida</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="top-bar">
+      <button class="home-btn">
+        <span class="material-icons">home</span>
+      </button>
+      <div class="search-container">
+        <span class="material-icons">search</span>
+        <input type="text" class="search" placeholder="Buscar..." />
+      </div>
+      <button class="login-btn">Inicia Sesión</button>
+      <div class="cart" id="cart-btn">
+        <span class="material-icons">shopping_cart</span>
+        <span id="cart-count">0</span>
+      </div>
+    </div>
+
+    <div class="main-banner">
+      <img 
+        src="https://pplx-res.cloudinary.com/image/upload/v1752837891/user_uploads/75020414/b89f89a4-1135-4908-a61f-0b3f9329578d/Publicidad-TICS.jpg" 
+        alt="Publicidad - ¿Quieres armar? Consigue tus componentes aquí" 
+        class="banner-img"
+      />
+    </div>
+
+    <h2 class="section-title">PRODUCTOS MÁS VENDIDOS</h2>
+    <div class="products-row">
+      <div class="product-main">
+        <a href="uno.html" class="product-link">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/3/38/Arduino_Uno_-_R3.jpg" alt="Arduino Uno" />
+          <div class="product-title">Arduino Uno</div>
+        </a>
+        <div class="product-price">Q450</div>
+        <img
+          class="add-cart-btn"
+          src="Imagen/Boton Añadir-04.png"
+          alt="Agregar"
+          data-name="Arduino Uno"
+          data-price="450"
+          style="cursor:pointer; width:150px; height:150px; margin-top:6px;"
+        />
+      </div>
+      <div class="product-main">
+        <a href="nano.html" class="product-link">
+          <img src="Imagen/Arduino nano.jpg" alt="Arduino Nano" />
+          <div class="product-title">Arduino Nano</div>
+        </a>
+        <div class="product-price">Q300</div>
+        <img
+          class="add-cart-btn"
+          src="Imagen/Boton Añadir-04.png"
+          alt="Agregar"
+          data-name="Arduino Nano"
+          data-price="300"
+          style="cursor:pointer; width:150px; height:150px; margin-top:6px;"
+        />
+      </div>
+      <div class="product-main">
+        <a href="l298n.html" class="product-link">
+          <img src="Imagen/Puente H.jpg" alt="Puente en H L298N" />
+          <div class="product-title">Puente en H L298N</div>
+        </a>
+        <div class="product-price">Q120</div>
+        <img
+          class="add-cart-btn"
+          src="Imagen/Boton Añadir-04.png"
+          alt="Agregar"
+          data-name="Puente en H L298N"
+          data-price="120"
+          style="cursor:pointer; width:150px; height:150px; margin-top:6px;"
+        />
+      </div>
+      <div class="product-main">
+        <a href="l193d.html" class="product-link">
+          <img src="Imagen/93d.jpg" alt="Puente en H L293D" />
+          <div class="product-title">Puente en H L293D</div>
+        </a>
+        <div class="product-price">Q80</div>
+        <img
+          class="add-cart-btn"
+          src="Imagen/Boton Añadir-04.png"
+          alt="Agregar"
+          data-name="Puente en H L293D"
+          data-price="80"
+          style="cursor:pointer; width:150px; height:150px; margin-top:6px;"
+        />
+      </div>
+      <div class="product-main">
+        <a href="reductor.html" class="product-link">
+          <img src="Imagen/Motor reductor.jpg" alt="Motor Reductor" />
+          <div class="product-title">Motor Reductor</div>
+        </a>
+        <div class="product-price">Q90</div>
+        <img
+          class="add-cart-btn"
+          src="Imagen/Boton Añadir-04.png"
+          alt="Agregar"
+          data-name="Motor Reductor"
+          data-price="90"
+          style="cursor:pointer; width:150px; height:150px; margin-top:6px;"
+        />
+      </div>
+      <div class="product-main">
+        <a href="n20.html" class="product-link">
+          <img src="Imagen/Motor N20.jpg" alt="Motor N20" />
+          <div class="product-title">Motor N20</div>
+        </a>
+        <div class="product-price">Q110</div>
+        <img
+          class="add-cart-btn"
+          src="Imagen/Boton Añadir-04.png"
+          alt="Agregar"
+          data-name="Motor N20"
+          data-price="110"
+          style="cursor:pointer; width:150px; height:150px; margin-top:6px;"
+        />
+      </div>
+      <div class="product-main">
+        <a href="luz.html" class="product-link">
+          <img src="Imagen/Sensor de Luz.jpg" alt="Sensor de Luz" />
+          <div class="product-title">Sensor de Luz</div>
+        </a>
+        <div class="product-price">Q25</div>
+        <img
+          class="add-cart-btn"
+          src="Imagen/Boton Añadir-04.png"
+          alt="Agregar"
+          data-name="Sensor de Luz"
+          data-price="25"
+          style="cursor:pointer; width:150px; height:150px; margin-top:6px;"
+        />
+
+    <!-- MODAL del carrito -->
+    <div id="cart-modal" class="cart-modal">
+      <div class="cart-modal-content">
+        <span class="close" id="close-cart">&times;</span>
+        <h3>Carrito de Compras</h3>
+        <div id="cart-items"></div>
+        <div id="cart-total"></div>
+      </div>
+    </div>
+  </div>
+  <script src="cart.js"></script>
+</body>
+</html>

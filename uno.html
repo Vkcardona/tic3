@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Arduino Uno - Detalle del Producto</title>
+  <link rel="stylesheet" href="producto.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="top-bar">
+      <div class="logo">
+        <img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" alt="Logo" />
+      </div>
+      <button class="back-btn" onclick="window.location.href='index.html'">
+        <span class="material-icons">arrow_back</span> Volver
+      </button>
+      <div class="cart" id="cart-btn">
+        <span class="material-icons">shopping_cart</span>
+        <span id="cart-count">0</span>
+      </div>
+    </div>
+
+    <main class="product-detail">
+      <img id="product-image" src="https://upload.wikimedia.org/wikipedia/commons/3/38/Arduino_Uno_-_R3.jpg" alt="Arduino Uno" />
+      <h1 id="product-name">Arduino Uno</h1>
+      <p id="product-description">
+        Arduino Uno es una placa basada en el microcontrolador ATmega328P, con 14 pines digitales (6 con PWM), 6 entradas analógicas, y un resonador cerámico de 16 MHz. Funciona a 5V y puede alimentarse por USB o fuente externa (7-12V recomendado). Ideal para proyectos electrónicos y programación con Arduino IDE.
+      </p>
+      <ul class="product-features">
+        <li>Microcontrolador: ATmega328P</li>
+        <li>Voltaje operativo: 5V</li>
+        <li>Voltaje de entrada recomendado: 7-12V</li>
+        <li>Pines digitales: 14 (6 con salida PWM)</li>
+        <li>Pines analógicos: 6</li>
+        <li>Memoria Flash: 32 KB (0.5 KB usada por bootloader)</li>
+        <li>SRAM: 2 KB</li>
+        <li>EEPROM: 1 KB</li>
+        <li>Velocidad de reloj: 16 MHz</li>
+        <li>Dimensiones: 68.6 x 53.4 mm</li>
+      </ul>
+      <div class="price-add">
+        <span id="product-price">Q450</span>
+        <button id="add-to-cart-btn" class="add-cart-btn">Agregar al carrito</button>
+      </div>
+    </main>
+
+    <footer>
+      <div class="contact">
+        <span>Contactanos:</span>
+        <span class="footer-icon"><i class="fa-regular fa-envelope"></i></span>
+        <span class="email">armeya.oficial@gmail.com</span>
+        <span class="footer-icon"><i class="fa-brands fa-instagram"></i></span>
+        <span class="instagram">@armeya.oficial</span>
+      </div>
+    </footer>
+
+    <!-- Carrito Modal -->
+    <div id="cart-modal" class="cart-modal">
+      <div class="cart-modal-content">
+        <span class="close" id="close-cart">&times;</span>
+        <h3>Carrito de Compras</h3>
+        <div id="cart-items"></div>
+        <div id="cart-total"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="cart.js"></script>
+  <script>
+    const addBtn = document.getElementById('add-to-cart-btn');
+addBtn.addEventListener('click', () => {
+  const product = {
+    name: "Arduino Uno",      
+    price: 450                
+  };
+  window.dispatchEvent(new CustomEvent('add-product', { detail: product }));
+});
+  </script>
+</body>
+</html>

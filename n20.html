@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Motor N20 con Caja Reductora - Detalle del Producto</title>
+  <link rel="stylesheet" href="producto.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="top-bar">
+      <div class="logo">
+        <img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" alt="Logo Motor N20" />
+      </div>
+      <button class="back-btn" onclick="window.location.href='index.html'">
+        <span class="material-icons">arrow_back</span> Volver
+      </button>
+      <div class="cart" id="cart-btn">
+        <span class="material-icons">shopping_cart</span>
+        <span id="cart-count">0</span>
+      </div>
+    </div>
+
+    <main class="product-detail">
+      <img id="product-image" src="Imagen/Motor N20.jpg" alt="Motor N20 con caja reductora" />
+      <h1 id="product-name">Motor N20 con Caja Reductora Metálica</h1>
+      <p id="product-description">
+        Motor DC compacto con caja reductora metálica integrada que proporciona un alto torque y baja velocidad, ideal para proyectos de robótica móvil, vehículos autónomos y dispositivos electrónicos que requieran alta precisión y durabilidad. Funciona en un rango amplio de voltajes de 3V a 12V DC.
+      </p>
+      <ul class="product-features">
+        <li>Voltaje de operación: 3V – 12V DC</li>
+        <li>Velocidad de rotación: aprox. 100 RPM a 6V</li>
+        <li>Torque de salida: 0.40 kg·cm</li>
+        <li>Corriente en vacío: 20 mA; Corriente máxima al torque: 120 mA</li>
+        <li>Diámetro del eje: 3 mm (Tipo D shape)</li>
+        <li>Longitud del eje: 10 mm</li>
+        <li>Dimensiones motor: ~12 mm de diámetro x 24 mm de longitud</li>
+        <li>Peso aproximado: 10 gramos</li>
+        <li>Caja reductora con engranajes metálicos para alta durabilidad</li>
+      </ul>
+      <div class="price-add">
+        <span id="product-price">Q60</span>
+        <button id="add-to-cart-btn" class="add-cart-btn">Agregar al carrito</button>
+      </div>
+    </main>
+
+    <footer>
+      <div class="contact">
+        <span>Contactanos:</span>
+        <span class="footer-icon"><i class="fa-regular fa-envelope"></i></span>
+        <span class="email">armeya.oficial@gmail.com</span>
+        <span class="footer-icon"><i class="fa-brands fa-instagram"></i></span>
+        <span class="instagram">@armeya.oficial</span>
+      </div>
+    </footer>
+
+    <!-- Carrito Modal -->
+    <div id="cart-modal" class="cart-modal">
+      <div class="cart-modal-content">
+        <span class="close" id="close-cart">&times;</span>
+        <h3>Carrito de Compras</h3>
+        <div id="cart-items"></div>
+        <div id="cart-total"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="cart.js"></script>
+  <script>
+    const addBtn = document.getElementById('add-to-cart-btn');
+    addBtn.addEventListener('click', () => {
+      const product = {
+        name: "Motor N20 con Caja Reductora Metálica",
+        price: 60
+      };
+      window.dispatchEvent(new CustomEvent('add-product', { detail: product }));
+    });
+  </script>
+</body>
+</html>

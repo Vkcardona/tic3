@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Puente en H L293D - Detalle del Producto</title>
+  <link rel="stylesheet" href="producto.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="top-bar">
+      <div class="logo">
+        <img src="Imagen/93d.jpg" alt="Logo" />
+      </div>
+      <button class="back-btn" onclick="window.location.href='index.html'">
+        <span class="material-icons">arrow_back</span> Volver
+      </button>
+      <div class="cart" id="cart-btn">
+        <span class="material-icons">shopping_cart</span>
+        <span id="cart-count">0</span>
+      </div>
+    </div>
+
+    <main class="product-detail">
+      <img id="product-image" src="Imagen/93d.jpg" alt="Puente en H L293D" />
+      <h1 id="product-name">Puente en H L293D</h1>
+      <p id="product-description">
+        El L293D es un controlador de motores bidireccional diseñado para controlar dos motores DC o un motor paso a paso. Puede manejar corrientes continuas de hasta 600 mA por canal y picos de hasta 1.2 A. Es compatible con señales TTL y tiene protección térmica y diodos flyback integrados para proteger contra daños por cargas inductivas.
+      </p>
+      <ul class="product-features">
+        <li>Voltaje de trabajo: 4.5V a 36V DC</li>
+        <li>Corriente máxima continua por canal: 600 mA</li>
+        <li>Pico de corriente por canal: 1.2 A (no repetitiva)</li>
+        <li>Encapsulado DIP de 16 pines</li>
+        <li>Control independiente de dos puentes H completos</li>
+        <li>Protección contra sobrecarga térmica</li>
+        <li>Diodos flyback incorporados para cargas inductivas</li>
+        <li>Compatibilidad con lógica TTL 3.3V/5V</li>
+        <li>Dimensiones aproximadas: 19 x 9 x 7 mm</li> 
+      </ul>
+      <div class="price-add">
+        <span id="product-price">Q80</span>
+        <button id="add-to-cart-btn" class="add-cart-btn">Agregar al carrito</button>
+      </div>
+    </main>
+
+    <footer>
+      <div class="contact">
+        <span>Contactanos:</span>
+        <span class="footer-icon"><i class="fa-regular fa-envelope"></i></span>
+        <span class="email">armeya.oficial@gmail.com</span>
+        <span class="footer-icon"><i class="fa-brands fa-instagram"></i></span>
+        <span class="instagram">@armeya.oficial</span>
+      </div>
+    </footer>
+
+    <!-- Carrito Modal -->
+    <div id="cart-modal" class="cart-modal">
+      <div class="cart-modal-content">
+        <span class="close" id="close-cart">&times;</span>
+        <h3>Carrito de Compras</h3>
+        <div id="cart-items"></div>
+        <div id="cart-total"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="cart.js"></script>
+  <script>
+    const addBtn = document.getElementById('add-to-cart-btn');
+addBtn.addEventListener('click', () => {
+  const product = {
+    name: "Puente en H L293D",      
+    price: 80                
+  };
+  window.dispatchEvent(new CustomEvent('add-product', { detail: product }));
+});
+  </script>
+</body>
+</html>

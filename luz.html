@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sensor de Luz - Detalle del Producto</title>
+  <link rel="stylesheet" href="producto.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="top-bar">
+      <div class="logo">
+        <img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" alt="Logo Sensor de Luz" />
+      </div>
+      <button class="back-btn" onclick="window.location.href='index.html'">
+        <span class="material-icons">arrow_back</span> Volver
+      </button>
+      <div class="cart" id="cart-btn">
+        <span class="material-icons">shopping_cart</span>
+        <span id="cart-count">0</span>
+      </div>
+    </div>
+
+    <main class="product-detail">
+      <img id="product-image" src="Imagen/Sensor de Luz.jpg" alt="Sensor de Luz LDR" />
+      <h1 id="product-name">Sensor de Luz LDR</h1>
+      <p id="product-description">
+        El sensor de luz LDR (Light Dependent Resistor) es un fototransistor que varía su resistencia en función de la intensidad luminosa que recibe. Es ideal para medir niveles de luz en proyectos electrónicos y automatización, permitiendo que dispositivos respondan al ambiente luminoso.
+      </p>
+      <ul class="product-features">
+        <li>Tipo: Resistor dependiente de luz (LDR)</li>
+        <li>Rango de resistencia: 10Ω (luz intensa) a 1MΩ (oscuridad)</li>
+        <li>Voltaje operativo: 3.3V - 5V</li>
+        <li>Uso común en sensores de luz ambiental</li>
+        <li>Tamaño compacto y fácil integración</li>
+        <li>Respuesta rápida a cambios de luz</li>
+        <li>Aplicaciones: automatización, alarmas, medidores de luz</li>
+      </ul>
+      <div class="price-add">
+        <span id="product-price">Q55</span>
+        <button id="add-to-cart-btn" class="add-cart-btn">Agregar al carrito</button>
+      </div>
+    </main>
+
+    <footer>
+      <div class="contact">
+        <span>Contactanos:</span>
+        <span class="footer-icon"><i class="fa-regular fa-envelope"></i></span>
+        <span class="email">armeya.oficial@gmail.com</span>
+        <span class="footer-icon"><i class="fa-brands fa-instagram"></i></span>
+        <span class="instagram">@armeya.oficial</span>
+      </div>
+    </footer>
+
+    <!-- Carrito Modal -->
+    <div id="cart-modal" class="cart-modal">
+      <div class="cart-modal-content">
+        <span class="close" id="close-cart">&times;</span>
+        <h3>Carrito de Compras</h3>
+        <div id="cart-items"></div>
+        <div id="cart-total"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="cart.js"></script>
+  <script>
+    const addBtn = document.getElementById('add-to-cart-btn');
+    addBtn.addEventListener('click', () => {
+      const product = {
+        name: "Sensor de Luz LDR",
+        price: 55
+      };
+      window.dispatchEvent(new CustomEvent('add-product', { detail: product }));
+    });
+  </script>
+</body>
+</html>
